@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | BIM Manager & Researcher</title>
+  <style>
+    :root {
+      --primary: #2b6777;
+      --secondary: #c8d8e4;
+      --accent: #f2a154;
+      --dark: #222;
+      --light: #fff;
+      --font: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--secondary);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: var(--light);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav button {
+      background: var(--accent);
+      border: none;
+      padding: 0.4rem 0.8rem;
+      margin-left: 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      color: var(--light);
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: var(--light);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--primary);
+      color: var(--light);
+      margin-top: 2rem;
+    }
+
+    /* Language toggle */
+    .lang-ru { display: none; }
+    body.ru .lang-en { display: none; }
+    body.ru .lang-ru { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="lang-en">My Portfolio</h1>
+    <h1 class="lang-ru">Моё Портфолио</h1>
+    <nav>
+      <button onclick="switchLang('en')">EN</button>
+      <button onclick="switchLang('ru')">RU</button>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2 class="lang-en">About Me</h2>
+    <h2 class="lang-ru">Обо мне</h2>
+    <div class="card">
+      <p class="lang-en">
+        I am a <strong>BIM Manager</strong> with expertise in civil engineering and project management.  
+        With a PhD and published research in the field, I bridge the gap between academic knowledge and practical implementation.  
+      </p>
+      <p class="lang-ru">
+        Я <strong>BIM-менеджер</strong> со специализацией в гражданском строительстве и управлении проектами.  
+        Обладаю степенью PhD и научными публикациями, соединяющими теорию и практику.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="lang-en">BIM Manager Skills</h2>
+    <h2 class="lang-ru">Навыки BIM-менеджера</h2>
+    <div class="card">
+      <ul class="lang-en">
+        <li>Implementing BIM workflows across multidisciplinary teams</li>
+        <li>Managing large-scale projects (Metro stations, civil buildings)</li>
+        <li>Training engineers transitioning from AutoCAD to Revit/BIM</li>
+        <li>Project lifecycle digitalization</li>
+      </ul>
+      <ul class="lang-ru">
+        <li>Внедрение BIM-процессов в многопрофильных командах</li>
+        <li>Управление крупными проектами (метро, гражданские здания)</li>
+        <li>Обучение инженеров переходу с AutoCAD на Revit/BIM</li>
+        <li>Цифровизация жизненного цикла проекта</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2 class="lang-en">PhD & Publications</h2>
+    <h2 class="lang-ru">PhD и публикации</h2>
+    <div class="card">
+      <p class="lang-en">
+        My PhD research focuses on digital transformation in construction and project management.  
+        Selected publications:  
+      </p>
+      <p class="lang-ru">
+        Моя докторская диссертация посвящена цифровой трансформации в строительстве и управлении проектами.  
+        Избранные публикации:  
+      </p>
+      <ul class="lang-en">
+        <li>"Optimizing Project Management with BIM" – Journal of Civil Engineering</li>
+        <li>"Digital Collaboration in Metro Construction Projects" – Int. Conf. on Construction</li>
+      </ul>
+      <ul class="lang-ru">
+        <li>«Оптимизация управления проектами с использованием BIM» – Журнал гражданского строительства</li>
+        <li>«Цифровое взаимодействие в проектах метрополитена» – Междунар. конф. по строительству</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="lang-en">Contact</h2>
+    <h2 class="lang-ru">Контакты</h2>
+    <div class="card">
+      <p class="lang-en">📧 Email: your@email.com</p>
+      <p class="lang-ru">📧 Почта: your@email.com</p>
+      <p class="lang-en">🔗 LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+      <p class="lang-ru">🔗 LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="lang-en">&copy; 2025 My Portfolio. Built with ❤️</p>
+    <p class="lang-ru">&copy; 2025 Моё портфолио. Сделано с ❤️</p>
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      if (lang === 'ru') {
+        document.body.classList.add('ru');
+      } else {
+        document.body.classList.remove('ru');
+      }
+    }
+  </script>
+</body>
+</html>
